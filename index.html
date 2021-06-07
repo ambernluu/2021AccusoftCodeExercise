@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/paint.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+
+<script src="js/utilities.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/controls.js"></script>
+<script src="js/rightClickMenu.js"></script>
+<script src="js/main.js"></script>
+
+<HEAD>Accusoft Javascript Code Exercise</HEAD>
+<ul class='custom-menu'>
+  <li data-action="first">Function 1</li>
+  <li data-action="second">Function 2</li>
+</ul>
+
+
+
+
+<ul id="tabs">
+
+      <li><a id="tab1">Canvas1</a></li>
+      <li><a id="tab2">Canvas2</a></li>
+
+</ul>
+      <div class="container" id="tab1C"></div>
+      <div class="container" id="tab2C"></div>         
+<body>
+  <script>
+
+
+
+ createPaint(document.body);
+ console.log(tools.getVersion());
+
+
+  </script>
+</body>
