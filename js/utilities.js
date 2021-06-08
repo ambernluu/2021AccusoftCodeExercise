@@ -19,7 +19,7 @@
     return node;
 
   }
-  relativePos = function(event, element) {
+  let relativePos = function(event, element) {
     var rect = element.getBoundingClientRect();
     return {x: Math.floor(event.clientX - rect.left),
             y: Math.floor(event.clientY - rect.top)};
@@ -40,9 +40,9 @@
     var image = document.createElement("img");
     image.addEventListener("load", function() {
       var color = cx.fillStyle, size = cx.lineWidth;
-      cx.canvas.width = image.height;
+      cx.canvas.width = image.width;
       cx.canvas.height = image.height;
-      cx.drawImage(image, 0);
+      cx.drawImage(image, 0, 0);
       cx.fillStyle = color;
       cx.strokeStyle = color;
       cx.lineWidth = size;
