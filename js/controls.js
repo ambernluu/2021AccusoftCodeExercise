@@ -49,7 +49,7 @@ controls = (function() {
 	  function update() {
 	    try {
 	      link.href = cx.canvas.toDataURL();
-		  console.log(` this is the link: ${link.href}`);
+		  //console.log(` this is the link: ${link.href}`);
 	    } catch (e) {
 	      if (e instanceof SecurityError)
 	        link.href = "javascript:alert(" +

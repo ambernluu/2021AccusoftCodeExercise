@@ -4,6 +4,7 @@ tools = (function() {
 
 	var _toolsModule = {};
 
+	_toolsModule.getVersion = () => ("Amber - version 1.0");
 
 	_toolsModule.Line = function(event, cx, onEnd) {
 	  cx.lineCap = "round";
@@ -30,7 +31,7 @@ tools = (function() {
 	  var text = prompt("Text:", "");
 	  if (text) {
 	    //var pos = utilities.relativePos(event, cx.canvas);
-		var pos = relativePos(event, cx.canvas);
+			//var pos = relativePos(event, cx.canvas);
 			var pos = relativePos(event, cx.canvas);
 	    cx.font = Math.max(7, cx.lineWidth) + "px sans-serif";
 	    cx.fillText(text, pos.x, pos.y);
@@ -56,6 +57,7 @@ tools = (function() {
 	  }, function() {
 	    clearInterval(spray);
 	  });
+
 	};
 
 
