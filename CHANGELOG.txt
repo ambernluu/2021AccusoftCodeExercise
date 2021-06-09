@@ -1,0 +1,4 @@
+things to do:
+right click menu ideas
+1. undo option 
+2. reset option
