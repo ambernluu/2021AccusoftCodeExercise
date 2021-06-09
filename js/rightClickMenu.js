@@ -27,6 +27,8 @@
                 break;
             case "second": 
                 alert("second"); 
+                console.log("reset button was pressed. we are in the switch function");
+                controlsModule.clearCanvas();
                 break;
         }
         // Hide it AFTER the action was triggered

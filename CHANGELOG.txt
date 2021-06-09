@@ -1,4 +1,4 @@
 things to do:
 right click menu ideas
 1. undo option 
-2. reset option
+2. reset option - context.clearRect(0, 0, canvas.width, canvas.height);
