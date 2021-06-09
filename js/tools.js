@@ -19,7 +19,7 @@ tools = (function() {
 
 	_toolsModule.Erase = function(event, cx) {
 	  $('selector').css( 'cursor', 'pointer' );
-		cx.globalCompositeoperation = "destination-out";
+		cx.globalCompositeOperation = "destination-out";
 		console.log(`globalcompositeoperation = ${cx.globalCompositeoperation}`);
 	  _toolsModule.Line(event, cx, function() {
 	    cx.globalCompositeOperation = "source-over";
@@ -29,7 +29,8 @@ tools = (function() {
 	_toolsModule.Text = function(event, cx) {
 	  var text = prompt("Text:", "");
 	  if (text) {
-	    var pos = utilities.relativePos(event, cx.canvas);
+	    //var pos = utilities.relativePos(event, cx.canvas);
+		var pos = relativePos(event, cx.canvas);
 			var pos = relativePos(event, cx.canvas);
 	    cx.font = Math.max(7, cx.lineWidth) + "px sans-serif";
 	    cx.fillText(text, pos.x, pos.y);

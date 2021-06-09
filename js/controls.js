@@ -1,12 +1,12 @@
-let controls = Object.create(null);
+var controls = Object.create(null);
 
 controls = (function() {
 
-	const controlsModule = {};
+	var controlsModule = {};
 
 	controlsModule.tool = function(cx) {
-	  const select = createDomElement("select");
-	  for (let name in tools) {
+	  var select = createDomElement("select");
+	  for (var name in tools) {
 
 	  	if (name == "getVersion") continue;
 	    select.appendChild(createDomElement("option", null, name));
@@ -23,7 +23,7 @@ controls = (function() {
 	};
 
 	controlsModule.color = function(cx) {
-	  const input = createDomElement("input", {type: "color"});
+	  var input = createDomElement("input", {type: "color"});
 	  input.addEventListener("change", function() {
 	    cx.fillStyle = input.value;
 	    cx.strokeStyle = input.value;
@@ -32,8 +32,8 @@ controls = (function() {
 	};
 
 	controlsModule.brushSize = function(cx) {
-	  const select = createDomElement("select");
-	  const sizes = [1, 2, 3, 5, 8, 12, 25, 35, 50, 75, 100];
+	  var select = createDomElement("select");
+	  var sizes = [1, 2, 3, 5, 8, 12, 25, 35, 50, 75, 100];
 	  sizes.forEach(function(size) {
 	    select.appendChild(createDomElement("option", {value: size},
 	                           size + " pixels"));
@@ -45,10 +45,11 @@ controls = (function() {
 	};
 
 	controlsModule.save = function(cx) {
-	  const link = createDomElement("a", {href: "/"}, "Save");
+	  var link = createDomElement("a", {href: "/"}, "Save");
 	  function update() {
 	    try {
 	      link.href = cx.canvas.toDataURL();
+		  console.log(` this is the link: ${link.href}`);
 	    } catch (e) {
 	      if (e instanceof SecurityError)
 	        link.href = "javascript:alert(" +
@@ -62,14 +63,13 @@ controls = (function() {
 	  return link;
 	};
 
-	controlsModule.openFile = function() {
-	  const input = createDomElement("input", {type: "file"});
+	controlsModule.openFile = function(cx) {
+	  var input = createDomElement("input", {type: "file"});
 	  input.addEventListener("change", function() {
 	    if (input.files.length == 0) return;
-	    let reader = new FileReader();
+	    var reader = new FileReader();
 	    reader.addEventListener("load", function() {
-				//this was the actual line, but it threw an cx not defined --->     loadImageURL(cx, reader.result);
-	      loadImageURL(createPaint.cx, reader.result);
+	      loadImageURL(cx, reader.result);
 	    });
 	    reader.readAsDataURL(input.files[0]);
 	  });
@@ -77,8 +77,8 @@ controls = (function() {
 	};
 
 	controlsModule.openURL = function(cx) {
-	  const input = createDomElement("input", {type: "text"});
-	  const form = createDomElement("form", null,
+	  var input = createDomElement("input", {type: "text"});
+	  var form = createDomElement("form", null,
 	                 "Open URL: ", input,
 	                 createDomElement("button", {type: "submit"}, "load"));
 	  form.addEventListener("submit", function(event) {
