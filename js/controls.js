@@ -93,6 +93,6 @@ controls = (function() {
 		cx.context.clearRect(0, 0, canvas.width, canvas.height);
 	} 
 
-
+	//made a random comment
 	return controlsModule;
 })();
