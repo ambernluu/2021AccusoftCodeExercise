@@ -11,13 +11,22 @@
 <script src="js/main.js"></script>
 
 <HEAD>Accusoft Javascript Code Exercise</HEAD>
-<ul class='custom-menu'>
+<!--original code --
+  <ul class='custom-menu'>
   <li data-action="first">Function 1</li>
-  <li data-action="second">Reset Canvas</li>
+  <li data-action="second">Reset Canvasd</li>
+</ul> -->
+
+<!-- first attempt
+  <ul class='custom-menu'>
+  <li <button data-action="undo">Undo </button></li>
+  <li <button data-action="resetCanvas">Reset Canvas</button></li>
+</ul> -->
+
+<ul class='custom-menu'>
+  <li <button onClick = "controlsModule.clearCanvas()" type= "button">Undo</button></li>
+  <li <button onClick = "controlsModule.clearCanvas()" type= "button">Clear Canvas</button></li>
 </ul>
-
-
-
 
 <ul id="tabs">
 
@@ -34,6 +43,20 @@
 
  createPaint(document.body);
  console.log(tools.getVersion());
+ 
+ //this is me making a mess with clear canvas
+ let actions = {
+  undo: console.log("undo"),
+  resetCanvas: console.log("this is me initiating clear cavas!!!")
+
+ };
+
+ $('body').on('click', '[data-action]', function(){
+  let action =$(this).data('action');
+    if (action in actions){
+      actions[action].apply(this, arguments);
+    }
+});
 
 
   </script>

@@ -30,8 +30,6 @@ tools = (function() {
 	_toolsModule.Text = function(event, cx) {
 	  var text = prompt("Text:", "");
 	  if (text) {
-	    //var pos = utilities.relativePos(event, cx.canvas);
-			//var pos = relativePos(event, cx.canvas);
 			var pos = relativePos(event, cx.canvas);
 	    cx.font = Math.max(7, cx.lineWidth) + "px sans-serif";
 	    cx.fillText(text, pos.x, pos.y);

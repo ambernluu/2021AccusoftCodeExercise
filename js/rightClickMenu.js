@@ -29,7 +29,8 @@
                 alert("second"); 
                 //made a random comment
                 console.log("reset button was pressed. we are in the switch function");
-                controlsModule.clearCanvas();
+                //controlsModule.clearCanvas();
+                createPaint(document.body);
                 break;
         }
         // Hide it AFTER the action was triggered
