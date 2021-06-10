@@ -18,10 +18,10 @@ tools = (function() {
 	  }, onEnd);
 	};
 
-	_toolsModule.Erase = function(event, cx) {
+	_toolsModule.Erase = function(event, cx, onEnd) {
 	  $('selector').css( 'cursor', 'pointer' );
 		cx.globalCompositeOperation = "destination-out";
-		console.log(`globalcompositeoperation = ${cx.globalCompositeoperation}`);
+		console.log(`globalcompositeoperation = ${cx.globalCompositeOperation}`);
 	  _toolsModule.Line(event, cx, function() {
 	    cx.globalCompositeOperation = "source-over";
 	  });
