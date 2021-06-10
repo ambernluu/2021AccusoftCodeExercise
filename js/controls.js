@@ -49,7 +49,7 @@ controls = (function() {
 	  function update() {
 	    try {
 	      link.href = cx.canvas.toDataURL();
-		  //console.log(` this is the link: ${link.href}`);
+		  console.log(` this is the link: ${link.href}`);
 	    } catch (e) {
 	      if (e instanceof SecurityError)
 	        link.href = "javascript:alert(" +
@@ -91,7 +91,7 @@ controls = (function() {
 	controlsModule.clearCanvas = function(cx){
 		console.log('inside of the clearCanvas function');
 		cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
-	} //i am getting undefined for clearRect. i think because cx is not defined yet. this is calling this too soon. HEEELP
+	} 
 
 	return controlsModule;
 })();
