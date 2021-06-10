@@ -17,21 +17,19 @@
         }
     });
     // If the menu element is clicked
-    //$(".custom-menu li").click(function(){
         $(document).on("click", ".custom-menu li", function(e) {
-        // This is the triggered action name
+        const canvas = document.getElementById("canvas1");
+        const cx = canvas.getContext("2d");
+    
         switch($(this).attr("data-action")) {  
-            // A case for each function. Your actions here
-            case "undo": 
+            // right click for fill background and resetting the canvas
+                case "fillBG": 
+                cx.fillRect(0, 0, cx.canvas.width, cx.canvas.height);
                 console.log("1");
                 console.log("2"); 
                 break;
             case "resetCanvas": 
-               // alert("second"); 
-                //console.log("reset button was pressed. we are in the switch function");
-                const canvas = document.getElementById("canvas1");
-                const cx = canvas.getContext("2d");
-                controls.clearCanvas(cx);
+                cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
                 createPaint(document.body);
                 break;
         }
@@ -47,23 +45,6 @@
         $('#button-1').trigger('click');
         alert('CLICKED 2');
     });
-
-
-
-    // $('#tabs li a:not(:first)').addClass('inactive');
-    // $('.container').hide();
-    // $('.container:first').show();
-        
-    // $('#tabs li a').click(function(){
-    //     var t = $(this).attr('id');
-    //   if($(this).hasClass('inactive')){ 
-    //     $('#tabs li a').addClass('inactive');           
-    //     $(this).removeClass('inactive');
-        
-    //     $('.container').hide();
-    //     $('#'+ t + 'C').fadeIn('slow');
-    //  }
-    // });
 
 
 

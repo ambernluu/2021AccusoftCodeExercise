@@ -13,11 +13,9 @@ function createPaint(parent) {
   const toolbar1 = createDomElement("div", {class: "toolbar"});
   const toolbar2 = createDomElement("div", {class: "toolbar"});
 
-  for (let name in controls) {
-    if (name !== "clearCanvas"){
+  for (let name in controls){
     toolbar1.appendChild(controls[name](cx));
     toolbar2.appendChild(controls[name](cx2));
-    }
   }
 
 

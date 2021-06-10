@@ -27,6 +27,7 @@ tools = (function() {
 	  });
 	};
 
+	//issue when changing colors and clicking on the canvas first that it doesn't change the color.
 	_toolsModule.Text = function(event, cx) {
 	  var text = prompt("Text:", "");
 	  if (text) {
@@ -57,8 +58,6 @@ tools = (function() {
 	  });
 
 	};
-
-
 
 	return _toolsModule;
 })();

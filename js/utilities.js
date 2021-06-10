@@ -1,8 +1,4 @@
 
-
-
-
-
   createDomElement = function(name, attributes) {
     var node = document.createElement(name);
     if (attributes) {

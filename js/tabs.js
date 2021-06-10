@@ -1,4 +1,4 @@
-
+//for switching between canvas tabs
     $(document).ready(function(){
     $('#tabs li a:not(:first)').addClass('inactive');
     $('.container').hide();
