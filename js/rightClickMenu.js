@@ -18,8 +18,19 @@
     });
     // If the menu element is clicked
         $(document).on("click", ".custom-menu li", function(e) {
-        const canvas = document.getElementById("canvas1");
+            const inactiveTab = $('#tabs li a.inactive').text();
+            let idToUse;
+
+            if(inactiveTab === "Canvas1"){
+                idToUse = "canvas2";
+            }
+            else{
+                idToUse = "canvas1";
+            }
+
+            const canvas = document.getElementById(idToUse);
         const cx = canvas.getContext("2d");
+    
     
         switch($(this).attr("data-action")) {  
             // right click for fill background and resetting the canvas
