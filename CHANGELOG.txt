@@ -2,3 +2,7 @@ things to do:
 right click menu ideas
 1. undo option 
 2. reset option - context.clearRect(0, 0, canvas.width, canvas.height);
+
+need to add comments
+need to change variables
+need to change functions to arrow functions

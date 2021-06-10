@@ -89,7 +89,7 @@ controls = (function() {
 	};
 
 	controlsModule.clearCanvas = function(cx){
-
+		let clear = createDomElement();
 		cx.context.clearRect(0, 0, canvas.width, canvas.height);
 	} 
 
