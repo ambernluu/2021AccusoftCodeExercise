@@ -4,7 +4,8 @@ function createPaint(parent) {
 
   const canvas1 = createDomElement("canvas", {width: 900, height: 500});
   const canvas2 = createDomElement("canvas", {width: 900, height: 500});
-
+  canvas1.setAttribute("id", "canvas1");
+  canvas2.setAttribute("id", "canvas2");
 
   const cx = canvas1.getContext("2d");
   const cx2 = canvas2.getContext("2d");
@@ -13,8 +14,10 @@ function createPaint(parent) {
   const toolbar2 = createDomElement("div", {class: "toolbar"});
 
   for (let name in controls) {
+    if (name !== "clearCanvas"){
     toolbar1.appendChild(controls[name](cx));
     toolbar2.appendChild(controls[name](cx2));
+    }
   }
 
 

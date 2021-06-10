@@ -17,19 +17,21 @@
         }
     });
     // If the menu element is clicked
-    $(".custom-menu li").click(function(){
+    //$(".custom-menu li").click(function(){
+        $(document).on("click", ".custom-menu li", function(e) {
         // This is the triggered action name
         switch($(this).attr("data-action")) {  
             // A case for each function. Your actions here
-            case "first": 
+            case "undo": 
                 console.log("1");
                 console.log("2"); 
                 break;
-            case "second": 
-                alert("second"); 
-                //made a random comment
-                console.log("reset button was pressed. we are in the switch function");
-                //controlsModule.clearCanvas();
+            case "resetCanvas": 
+               // alert("second"); 
+                //console.log("reset button was pressed. we are in the switch function");
+                const canvas = document.getElementById("canvas1");
+                const cx = canvas.getContext("2d");
+                controls.clearCanvas(cx);
                 createPaint(document.body);
                 break;
         }

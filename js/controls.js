@@ -90,7 +90,7 @@ controls = (function() {
 
 	controlsModule.clearCanvas = function(cx){
 		console.log('inside of the clearCanvas function');
-		cx.context.clearRect(0, 0, canvas.width, canvas.height);
+		cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
 	} //i am getting undefined for clearRect. i think because cx is not defined yet. this is calling this too soon. HEEELP
 
 	return controlsModule;
