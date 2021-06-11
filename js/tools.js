@@ -1,27 +1,27 @@
 var tools = {} || tools;
 
 tools = (function() {
-
 	var _toolsModule = {};
 
 	_toolsModule.getVersion = () => ("Amber - version 1.0");
 
 	_toolsModule.Line = function(event, cx, onEnd) {
-	  cx.lineCap = "round";
+		cx.lineCap = "round";
 	  var pos = relativePos(event, cx.canvas);
+	  
 	  trackDrag(function(event) {
-	    cx.beginPath();
+		cx.beginPath();
 	    cx.moveTo(pos.x, pos.y);
 	    pos = relativePos(event, cx.canvas);
 	    cx.lineTo(pos.x, pos.y);
 	    cx.stroke();
 	  }, onEnd);
+	  
 	};
 
-	_toolsModule.Erase = function(event, cx, onEnd) {
+	_toolsModule.Erase = function(event, cx) {
 	  $('selector').css( 'cursor', 'pointer' );
 		cx.globalCompositeOperation = "destination-out";
-		console.log(`globalcompositeoperation = ${cx.globalCompositeOperation}`);
 	  _toolsModule.Line(event, cx, function() {
 	    cx.globalCompositeOperation = "source-over";
 	  });

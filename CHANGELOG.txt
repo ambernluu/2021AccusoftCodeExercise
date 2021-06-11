@@ -6,3 +6,15 @@ right click menu ideas
 need to add comments
 need to change variables
 need to change functions to arrow functions
+
+fixed code to load an image from URL and fit the canvas appropriately
+
+fixed code to 
+
+implemented right click
+created right click option 1 - fill background
+created right click option 2 - resetting the canvas to start over
+
+added code to set globalCompositeOperation back to destination-overafter erase was done
+
+updated variables to remove var and replace with let and const
