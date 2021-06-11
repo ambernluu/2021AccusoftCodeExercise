@@ -41,6 +41,7 @@
                 // right click for resetting canvas option
                 case "resetCanvas": 
                     cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
+                    canvas.style.background = "transparent"; 
                     createPaint(document.body);
                 break;
         }
@@ -48,14 +49,6 @@
         $(".custom-menu").hide(100);
       });
 
-    $('#Menu').on( "click", '#button-1', function(e){
-        alert('CLICKED 1');
-    });
-
-    $('#Menu').on( "click", '#button-2', function(e){
-        $('#button-1').trigger('click');
-        alert('CLICKED 2');
-    });
 
 
 
