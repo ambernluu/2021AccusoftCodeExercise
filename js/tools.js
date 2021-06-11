@@ -6,6 +6,7 @@ tools = (function() {
 	const _toolsModule = {};
 
 	//sets getVersion to the string below
+	//used simple arrow function
 	_toolsModule.getVersion = () => ("Amber - version 1.0");
 
 	//for line tool. erase tool calls this function and sets onEnd to function to set cx.globalCompositeOperation back to source-over
@@ -14,7 +15,7 @@ tools = (function() {
 	  let pos = relativePos(event, cx.canvas);
 	  
 	  trackDrag(function(event) {
-		cx.beginPath();
+			cx.beginPath();
 	    cx.moveTo(pos.x, pos.y);
 	    pos = relativePos(event, cx.canvas);
 	    cx.lineTo(pos.x, pos.y);

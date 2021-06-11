@@ -1,20 +1,16 @@
-things to do:
-right click menu ideas
-1. undo option 
-2. reset option - context.clearRect(0, 0, canvas.width, canvas.height);
+-- Amber Luu 2021AccusoftExercise changelog --
 
-need to add comments
-need to change variables
-need to change functions to arrow functions
+#issues fixed
+1. Canvas tabs - created new js file tabs.js and migrated moved pre written relative code there from rightClickMenu.js. leveraged the .inactive to set the idToUse as the active tab to display and manipulate
 
-fixed code to load an image from URL and fit the canvas appropriately
+2. Erase tool - changed toolsModule.Line(event, cx, function() to _toolsModule.Line(event, cx, function() so it was correctly referenced
 
-fixed code to 
+3. Text tool - utilities is not defined error. removed utilities. from var pos = utilities.relativePos(event, cx.canvas);
 
-implemented right click
-created right click option 1 - fill background
-created right click option 2 - resetting the canvas to start over
+4. Upload tool - error cx is not defined. passed cx as parameter in controlsModule.openFile = function()
 
-added code to set globalCompositeOperation back to destination-overafter erase was done
+5. Uncaught TypeError: tools.getVersion is not a function - created function to set _toolsModule.getVersion to "Amber - version 1.0" which is displayed on load
 
-updated variables to remove var and replace with let and const
+#new implementation
+
+#

@@ -35,10 +35,11 @@
         switch($(this).attr("data-action")) {  
                 // right click for fill background
                 case "fillBG": 
-                cx.fillRect(0, 0, cx.canvas.width, cx.canvas.height);
-                console.log("1");
-                console.log("2"); 
+                cx.globalCompositeoperation = "destination-over";
+                console.log(`globalcompo is set to : ${cx.globalCompositeoperation}`);         
+                cx.fillRect(0, 0, cx.canvas.width, cx.canvas.height);         
                 break;
+
                 // right click for resetting canvas option
                 case "resetCanvas": 
                 cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
