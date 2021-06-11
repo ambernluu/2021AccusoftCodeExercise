@@ -1,9 +1,9 @@
 var controls = Object.create(null);
 
 controls = (function() {
-
+	//object to hold the tools
 	var controlsModule = {};
-
+	//associates name of tool with corresponding function to be called when mouse is clicked on canvas
 	controlsModule.tool = function(cx) {
 	  var select = createDomElement("select");
 	  for (var name in tools) {
@@ -22,6 +22,7 @@ controls = (function() {
 	  return createDomElement("span", null, "Tool: ", select);
 	};
 
+	//allows user to select a color from the color toolbar
 	controlsModule.color = function(cx) {
 	  var input = createDomElement("input", {type: "color"});
 	  input.addEventListener("change", function() {
@@ -31,6 +32,7 @@ controls = (function() {
 	  return createDomElement("span", null, "Color: ", input);
 	};
 
+	//gives the option of brush size from the brush size option on the toolbar
 	controlsModule.brushSize = function(cx) {
 	  var select = createDomElement("select");
 	  var sizes = [1, 2, 3, 5, 8, 12, 25, 35, 50, 75, 100];
@@ -44,6 +46,7 @@ controls = (function() {
 	  return createDomElement("span", null, "Brush size: ", select);
 	};
 
+	//saves the image with dataURL() to new tab on browser so user can right click and save from there
 	controlsModule.save = function(cx) {
 	  var link = createDomElement("a", {href: "/"}, "Save");
 	  function update() {
@@ -62,6 +65,7 @@ controls = (function() {
 	  return link;
 	};
 
+	//opens a locally saved image
 	controlsModule.openFile = function(cx) {
 	  var input = createDomElement("input", {type: "file"});
 	  input.addEventListener("change", function() {
@@ -75,6 +79,7 @@ controls = (function() {
 	  return createDomElement("div", null, "Open file: ", input);
 	};
 
+	//displays an image from a web URL
 	controlsModule.openURL = function(cx) {
 	  var input = createDomElement("input", {type: "text"});
 	  var form = createDomElement("form", null,

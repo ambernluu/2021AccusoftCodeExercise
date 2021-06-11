@@ -1,8 +1,8 @@
         $(document).bind("contextmenu", function (event) {       
-        // Prevent the default COntext Menu from showing
+        // Prevent the default Context Menu from showing
         event.preventDefault();     
         // Show contextmenu to the lower right of the mouse
-        var positionOfMenuRelativeToClickPoint = {
+        const positionOfMenuRelativeToClickPoint = {
             top: event.pageY + "px",
             left: event.pageX + "px"
         }
@@ -33,13 +33,14 @@
     
     
         switch($(this).attr("data-action")) {  
-            // right click for fill background and resetting the canvas
+                // right click for fill background
                 case "fillBG": 
                 cx.fillRect(0, 0, cx.canvas.width, cx.canvas.height);
                 console.log("1");
                 console.log("2"); 
                 break;
-            case "resetCanvas": 
+                // right click for resetting canvas option
+                case "resetCanvas": 
                 cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
                 createPaint(document.body);
                 break;

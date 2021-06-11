@@ -1,6 +1,6 @@
 
+//appends paint interface to the DOM element
 function createPaint(parent) {
-
 
   const canvas1 = createDomElement("canvas", {width: 900, height: 500});
   const canvas2 = createDomElement("canvas", {width: 900, height: 500});
