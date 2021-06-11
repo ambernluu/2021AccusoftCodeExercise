@@ -1,6 +1,6 @@
 -- Amber Luu 2021AccusoftExercise changelog --
 
-#issues fixed
+#issues fixed/things changed
 1. Canvas tabs - created new js file tabs.js and migrated moved pre written relative code there from rightClickMenu.js. leveraged the .inactive to set the idToUse as the active tab to display and manipulate
 
 2. Erase tool - changed toolsModule.Line(event, cx, function() to _toolsModule.Line(event, cx, function() so it was correctly referenced
@@ -11,6 +11,13 @@
 
 5. Uncaught TypeError: tools.getVersion is not a function - created function to set _toolsModule.getVersion to "Amber - version 1.0" which is displayed on load
 
-#new implementation
+6.  Added comments to code explaining functions
 
-#
+7. removed all use of var and replaced with const and let
+
+
+#new implementation
+1. Right click option 1 - paint canvas background by setting canvas.style.background = cx.fillStyle to use current color selected 
+
+2. Right click option 2 - reset canvas - used cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
+

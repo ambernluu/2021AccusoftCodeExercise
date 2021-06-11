@@ -34,16 +34,14 @@
     
         switch($(this).attr("data-action")) {  
                 // right click for fill background
-                case "fillBG": 
-                cx.globalCompositeoperation = "destination-over";
-                console.log(`globalcompo is set to : ${cx.globalCompositeoperation}`);         
-                cx.fillRect(0, 0, cx.canvas.width, cx.canvas.height);         
+                case "fillBG":
+                    canvas.style.background = cx.fillStyle;        
                 break;
 
                 // right click for resetting canvas option
                 case "resetCanvas": 
-                cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
-                createPaint(document.body);
+                    cx.clearRect(0, 0, cx.canvas.width,cx.canvas.height);
+                    createPaint(document.body);
                 break;
         }
         // Hide it AFTER the action was triggered
